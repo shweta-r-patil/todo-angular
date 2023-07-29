@@ -7,18 +7,25 @@
                     <div class="input-fld">
                         <form class="example-form">
                             <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Enter a todo here" name="val" [(ngModel)]="todoVal"
-                                    (keyup)="onKeyPress($event)">
+                                <input matInput placeholder="Enter a todo here" name="inputVal" [(ngModel)]="todoVal">
                             </mat-form-field>
+                            <mat-icon (click)="clearAll()">cancel</mat-icon>
                         </form>
                     </div>
                     <div class="btn">
-                        <button mat-raised-button (click)="addTodo($event)">ADD</button>
+                        <button mat-raised-button (click)="addTodo()">ADD</button>
                     </div>
                 </div>
             </mat-card-content>
         </mat-card>
-
+    </div>
+    <div *ngFor="let todo of todoArr; let i=index" class="list-card">
+        <div class="chekbox">
+            <mat-checkbox></mat-checkbox>
+            <mat-card class="content">{{todo}}</mat-card>
+            <span><mat-icon>delete</mat-icon></span>
+            <span><mat-icon>create</mat-icon></span>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>
