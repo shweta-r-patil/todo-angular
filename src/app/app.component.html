@@ -1,2 +1,24 @@
-<h1>Hello world</h1>
+<div class="main-container">
+    <div class="main-card">
+        <mat-card>
+            <mat-card-content class="card-content">
+                <div>New Todo</div>
+                <div class="in-card">
+                    <div class="input-fld">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Enter a todo here" name="val" [(ngModel)]="todoVal"
+                                    (keyup)="onKeyPress($event)">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="btn">
+                        <button mat-raised-button (click)="addTodo($event)">ADD</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>
 <router-outlet></router-outlet>
