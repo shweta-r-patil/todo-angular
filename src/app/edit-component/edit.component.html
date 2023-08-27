@@ -1,0 +1,20 @@
+<div>
+    <mat-card class="update-todo-card">
+        <mat-card-content class="card-content">
+            <div>Update Todo</div>
+            <div class="in-card">
+                <div class="input-fld">
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Enter a todo here" name="inputVal" [(ngModel)]="data.todoText">
+                        </mat-form-field>
+                        <mat-icon (click)="clearText()">cancel</mat-icon>
+                    </form>
+                </div>
+                <div class="btn">
+                    <button mat-raised-button (click)="updateTodo()" [disabled]="!data.todoText">UPDATE</button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -20,11 +20,21 @@
         </mat-card>
     </div>
     <div *ngFor="let todo of todoArr; let i=index" class="list-card">
-        <div class="chekbox">
-            <mat-checkbox></mat-checkbox>
-            <mat-card class="content">{{todo}}</mat-card>
-            <span><mat-icon>delete</mat-icon></span>
-            <span><mat-icon>create</mat-icon></span>
+        <div class="todo-Container">
+            <div class="todo-checkbox">
+                <mat-checkbox (change)="changeEvent($event, i)"></mat-checkbox>
+            </div>
+            <div class="todo-text" [ngStyle]="{'text-decoration': todo.isChecked ? 'line-through' : 'none'}">
+                {{todo.value}}
+            </div>
+            <div class="todo-actions">
+                <span>
+                    <mat-icon (click)="deleteItem(i)">delete</mat-icon>
+                </span>
+                <span>
+                    <mat-icon (click)="openDialog(i)">create</mat-icon>
+                </span>
+            </div>
         </div>
     </div>
 </div>

@@ -36,7 +36,6 @@
                 }
 
                 .btn {
-                    background-color: rgb(220, 124, 89);
                     color: white;
                 }
             }
@@ -50,15 +49,27 @@
         line-height: 42px;
         text-align: justify;
 
-        .chekbox {
+        .todo-Container {
             display: flex;
             gap: 15px;
             padding-left: 20px;
             padding-right: 20px;
             padding-top: 10px;
             padding-bottom: 10px;
-            .content {
+
+            .todo-text {
                 flex-grow: 1;
+            }
+
+            .todo-actions {
+                display: none;
+            }
+        }
+
+        .todo-Container:hover {
+            .todo-actions {
+                display: block;
+                display: flex;
             }
         }
     }

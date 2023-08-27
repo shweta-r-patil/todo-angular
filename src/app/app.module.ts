@@ -11,10 +11,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditComponent } from './edit-component/edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +30,13 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     MatButtonModule,
     MatCheckboxModule, 
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
